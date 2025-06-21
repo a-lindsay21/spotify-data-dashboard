@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Data Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+<div style="margin: 20px 0;">
+  <input
+    type="text"
+    id="search-bar"
+    placeholder="Search by artist or track name..."
+    style="padding: 8px; width: 300px; font-size: 1em;"
+  />
+</div>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- PapaParse CDN (for loading CSV in-browser) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <h1>🎧 Spotify Data Dashboard</h1>
+  <p>Explore insights from 1,000 synthetic Spotify tracks.</p>
+
+<!-- Top Artists Chart -->
+<h2>Top 5 Artists by Number of Songs</h2>
+<div class="chart-container">
+  <canvas id="artistChart"></canvas>
+</div>
+
+<!-- Danceability Chart -->
+<h2>Average Danceability by Genre</h2>
+<div class="chart-container">
+  <canvas id="danceabilityChart"></canvas>
+</div>
+
+<!-- Valence vs. Energy -->
+<h2>Valence vs. Energy (Filtered by Genre)</h2>
+<label for="valence-genre-select">Choose a genre:</label>
+<select id="valence-genre-select">
+  <option value="all">All Genres</option>
+</select>
+<div class="chart-container">
+  <canvas id="valenceEnergyChart"></canvas>
+</div>
+
+<!-- Popularity vs. Tempo -->
+<h2>Popularity vs. Tempo (Filtered by Genre)</h2>
+<label for="tempo-genre-select">Choose a genre:</label>
+<select id="tempo-genre-select">
+  <option value="all">All Genres</option>
+</select>
+<div class="chart-container">
+  <canvas id="popularityTempoChart"></canvas>
+</div>
+
+
+<h2 class="chart-title">Genre Distribution</h2>
+<canvas id="genreDistributionChart"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
